@@ -2,6 +2,8 @@
 
 A simple todo application built with React, deployed on Netlify, and automated with CI/CD using GitHub Actions.
 
+[Check it here !](https://wutsinmytodolist.netlify.app/)
+
 ## 🧰 Tech Stack
 
 - **React**: Used for the frontend to create a dynamic and responsive user interface.

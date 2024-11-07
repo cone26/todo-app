@@ -5,7 +5,7 @@ function App() {
   const [todo, setTodo] = React.useState("");
   const [todos, setTodos] = React.useState([]);
   // const [percent, setPercent] = React.useState(0);
-
+  const isDone = " - ";
   const onChange = (event) => setTodo(event.target.value);
   const addTodo = (e) => {
     e.preventDefault();
@@ -18,6 +18,12 @@ function App() {
   return (
     <div className="App">
       <h1>Todo List</h1>
+      <div className="processBar">
+        <div id="unfinished">
+          <div id="done"></div>
+        </div>
+      </div>
+      <span>0% done</span>
       <form onSubmit={addTodo}>
         <input
           onChange={onChange}
@@ -27,15 +33,15 @@ function App() {
         ></input>
         <button>Add todo</button>
       </form>
-      {todos.map((todo, id) => (
-        <li key={id}>{todo}</li>
-      ))}
-      <div className="processBar">
-        <div id="unfinished">
-          <div id="done"></div>
-        </div>
-      </div>
-      <span>0% done</span>
+
+      <ul className="todos">
+        {todos.map((todo, id) => (
+          <li key={id}>
+            {isDone}
+            {todo}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
