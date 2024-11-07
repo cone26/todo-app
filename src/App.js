@@ -4,6 +4,7 @@ import "./App.css";
 function App() {
   const [todo, setTodo] = React.useState("");
   const [todos, setTodos] = React.useState([]);
+  const [percent, setPercent] = React.useState(0);
 
   const onChange = (event) => setTodo(event.target.value);
   const addTodo = (e) => {
@@ -29,7 +30,12 @@ function App() {
       {todos.map((todo, id) => (
         <li key={id}>{todo}</li>
       ))}
-      <div>test</div>
+      <div className="processBar">
+        <div id="unfinished">
+          <div id="done"></div>
+        </div>
+      </div>
+      <span>{percent}% done</span>
     </div>
   );
 }
