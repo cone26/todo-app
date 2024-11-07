@@ -4,7 +4,7 @@ import "./App.css";
 function App() {
   const [todo, setTodo] = React.useState("");
   const [todos, setTodos] = React.useState([]);
-  const [percent, setPercent] = React.useState(0);
+  // const [percent, setPercent] = React.useState(0);
 
   const onChange = (event) => setTodo(event.target.value);
   const addTodo = (e) => {
@@ -35,7 +35,7 @@ function App() {
           <div id="done"></div>
         </div>
       </div>
-      <span>{percent}% done</span>
+      <span>0% done</span>
     </div>
   );
 }
