@@ -15,7 +15,7 @@ function App() {
 
     setTodo("");
     setTodos((todos) => [todo, ...todos]);
-    setTotal((total) => total++);
+    setTotal((total) => ++total);
   };
   const deleteTodo = (index) => {
     const updatedTodo = todos.filter((_, i) => i !== index);
@@ -32,7 +32,7 @@ function App() {
         </div>
       </div>
       <span>0% done</span>
-      <span>total {total}</span>
+      <span>You have {total} tasks.</span>
       <form onSubmit={addTodo}>
         <input
           onChange={onChange}

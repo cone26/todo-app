@@ -58,3 +58,8 @@ li {
 form {
   margin: 15px;
 }
+
+span {
+  display: flex;
+  justify-content: center;
+}
