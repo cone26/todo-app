@@ -5,7 +5,7 @@ function App() {
   const [todo, setTodo] = React.useState("");
   const [todos, setTodos] = React.useState([]);
   // const [percent, setPercent] = React.useState(0);
-  const [status, setStatus] = React.useState(true);
+  const [total, setTotal] = React.useState(0);
 
   const isDone = " - ";
   const onChange = (event) => setTodo(event.target.value);
@@ -15,10 +15,12 @@ function App() {
 
     setTodo("");
     setTodos((todos) => [todo, ...todos]);
+    setTotal((total) => total++);
   };
   const deleteTodo = (index) => {
     const updatedTodo = todos.filter((_, i) => i !== index);
     setTodos([...updatedTodo]);
+    setTotal((total) => total--);
   };
 
   return (
@@ -30,6 +32,7 @@ function App() {
         </div>
       </div>
       <span>0% done</span>
+      <span>total {total}</span>
       <form onSubmit={addTodo}>
         <input
           onChange={onChange}
