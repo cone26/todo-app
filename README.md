@@ -14,7 +14,7 @@ A simple todo application built with React, deployed on Netlify, and automated w
 
 ## 🧰 Tech Stack
 
-- **React**: Used for the frontend to create a dynamic and responsive user interface.
+- **NextJS & React & TypeScript**: Used for the frontend to create a dynamic and responsive user interface.
 - **Netlify**: Used for deployment to host the app and deliver it globally with ease.
 - **GitHub Actions**: Set up for CI/CD, automating tests and deployment processes for streamlined development.
 
