@@ -52,10 +52,13 @@ export default function Todo() {
           <div id={styles.done} style={{ width: `${percent}%` }}></div>
         </div>
       </div>
-      <span>{percent}% done</span>
-      <span>You have {total - done} tasks.</span>
+      <span className={styles.span}>{percent}% done</span>
+      <span className={styles.span}>You have {total - done} tasks.</span>
 
-      <span className={styles.click}> Click to check done!</span>
+      <span className={styles.span} id={styles.click}>
+        {" "}
+        Click to check done!
+      </span>
       <ul className={styles.todos}>
         {todos.map((todo, idx) => (
           <li className={styles.todo} key={idx} onClick={() => deleteTodo(idx)}>
