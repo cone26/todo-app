@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Todo App 📝
 
-## Getting Started
+A simple todo application built with React, deployed on Netlify, and automated with CI/CD using GitHub Actions.
 
-First, run the development server:
+[Check it here !](https://wutsinmytodolist.netlify.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ☑️ TODO
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [ ] make the done tasks -> text-decoration: line-through;
+- [ ] save the tasks
+- [ ] directory structure
+- [ ] organize components
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🧰 Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **React**: Used for the frontend to create a dynamic and responsive user interface.
+- **Netlify**: Used for deployment to host the app and deliver it globally with ease.
+- **GitHub Actions**: Set up for CI/CD, automating tests and deployment processes for streamlined development.
 
-## Learn More
+## ✏️ Features
 
-To learn more about Next.js, take a look at the following resources:
+- Create, update, and delete tasks.
+- Responsive design for mobile and desktop users.
+- Automatically deployed to production through CI/CD.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ➡️Getting Started
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Clone the Repository**
 
-## Deploy on Vercel
+   ```bash
+   git clone https://github.com/yourusername/todo-app.git
+   cd todo-app
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Install Dependencies**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```bash
+   npm install
+   ```
+
+3. **Run the App Locally**
+
+   ```bash
+   npm start
+   ```
+
+4. **Deploy**  
+   The app is automatically deployed to Netlify through GitHub Actions when changes are pushed to the `main` branch.
