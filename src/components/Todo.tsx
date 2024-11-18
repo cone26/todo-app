@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "../app/styles/todo.module.css";
 
 export default function Todo() {
   const [todo, setTodo] = React.useState<string>("");
@@ -35,29 +36,29 @@ export default function Todo() {
   };
 
   return (
-    <div className="App">
-      <form onSubmit={addTodo}>
+    <div className={styles.todoApp}>
+      <form onSubmit={addTodo} className={styles.form}>
         <input
           onChange={onChange}
           value={todo}
           type="text"
-          className="todoInput"
+          className={styles.todoInput}
           placeholder="Click to add a task."
         ></input>
-        <button className="addTask">Add todo</button>
+        <button className={styles.addTask}>Add todo</button>
       </form>
-      <div className="processBar">
-        <div id="unfinished">
-          <div id="done" style={{ width: `${percent}%` }}></div>
+      <div className={styles.processBar}>
+        <div id={styles.unfinished}>
+          <div id={styles.done} style={{ width: `${percent}%` }}></div>
         </div>
       </div>
       <span>{percent}% done</span>
       <span>You have {total - done} tasks.</span>
 
-      <span className="click"> Click to check done!</span>
-      <ul className="todos">
+      <span className={styles.click}> Click to check done!</span>
+      <ul className={styles.todos}>
         {todos.map((todo, idx) => (
-          <li key={idx} onClick={() => deleteTodo(idx)}>
+          <li className={styles.todo} key={idx} onClick={() => deleteTodo(idx)}>
             {todo}
           </li>
         ))}
