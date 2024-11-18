@@ -8,7 +8,7 @@ A simple todo application built with React, deployed on Netlify, and automated w
 
 - [ ] make the done tasks -> text-decoration: line-through;
 - [ ] save the tasks
-- [ ] directory structure
+- [x] directory structure
 - [ ] organize components
 - [x] next js migration
 
