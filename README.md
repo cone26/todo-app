@@ -10,7 +10,7 @@ A simple todo application built with React, deployed on Netlify, and automated w
 - [ ] save the tasks
 - [ ] directory structure
 - [ ] organize components
-- [v] organize components
+- [x] organize components
 
 ## 🧰 Tech Stack
 
