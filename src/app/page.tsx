@@ -46,6 +46,9 @@ export default function Page() {
 
   return (
     <div className={styles.todoApp}>
+      <h1 style={{ textAlign: "center", color: "#3d3d3d" }}>
+        {new Date().getMonth()}/{new Date().getDate()}
+      </h1>
       <TodoForm onAddTodo={handleAddTodo} />
       <div className={styles.processBar}>
         <div id={styles.unfinished}>
