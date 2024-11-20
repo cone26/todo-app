@@ -4,7 +4,7 @@ import TodoForm from "@/components/TodoForm";
 import React, { useState, useEffect } from "react";
 import { loadTodos, saveTodos } from "utils/storage";
 import styles from "../app/styles/todo.module.css";
-
+import "./globals.css";
 interface Todo {
   id: string;
   text: string;

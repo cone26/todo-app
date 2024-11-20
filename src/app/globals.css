@@ -1,21 +1,23 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
-:root {
-  --background: #f5f5dc;
-  --foreground: #171717;
-  --width: 100vw;
-  --height: 100vh;
-  --margin: 0;
+html {
+  background-color: #f5f5dc;
+  /* --foreground: #171717; */
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --display: flex;
-  --justify-content: center;
-  --font: "Varela Round";
-  --font-family: Raleway, sans-serif;
+  display: flex;
+  justify-content: center;
 }
 
+* {
+  font: "Varela Round";
+  font-family: Raleway, sans-serif;
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
