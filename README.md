@@ -15,6 +15,7 @@ A simple todo application built with React, deployed on Netlify, and automated w
 - [x] directory structure
 - [x] organize components
 - [x] next js migration
+- [ ] ci cd script...
 
 ## 🧰 Tech Stack
 
