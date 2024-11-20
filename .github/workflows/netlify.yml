@@ -19,7 +19,7 @@ jobs:
       #   run: npm run build
       - name: Deploy to Netlify
         run: curl -X POST -d {} ${{secrets.NETLIFY_HOOK}}
-        uses: nwtgck/actions-netlify@v2.0
+        # uses: nwtgck/actions-netlify@v2.0
         # with:
         #   publish-dir: "./dist"
         #   deploy-message: "Deploy from GitHub Actions"
