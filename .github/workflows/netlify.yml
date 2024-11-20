@@ -8,20 +8,24 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
-
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
       - name: Install dependencies
         run: npm install
 
-      - name: Build
-        run: npm run build
+      # - name: Build
+      #   run: npm run build
       - name: Deploy to Netlify
+        run: curl -X POST -d {} ${{secrets.NETLIFY_HOOK}}
         uses: nwtgck/actions-netlify@v2.0
-        with:
-          publish-dir: "./dist"
-          deploy-message: "Deploy from GitHub Actions"
-          enable-pull-request-comment: false
-          enable-commit-comment: true
-          overwrites-pull-request-comment: true
+        # with:
+        #   publish-dir: "./dist"
+        #   deploy-message: "Deploy from GitHub Actions"
+        #   enable-pull-request-comment: false
+        #   enable-commit-comment: true
+        #   overwrites-pull-request-comment: true
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
