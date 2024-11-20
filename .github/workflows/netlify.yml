@@ -13,7 +13,7 @@ jobs:
   #       run: npm install
 
   deploy:
-  name: "Deploy to Netlify"
+    name: "Deploy to Netlify"
     steps:
       - uses: actions/checkout@v3
       - uses: veloii/action-netlify-deploy@v2.2.1
