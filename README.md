@@ -4,6 +4,10 @@ A simple todo application built with React, deployed on Netlify, and automated w
 
 [Check it here !](https://wutsinmytodolist.netlify.app/)
 
+## Deploy Status
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4eb86ccb-c93b-4f5f-9916-6dd16e653751/deploy-status)](https://app.netlify.com/sites/wutsinmytodolist/deploys)
+
 ## ☑️ TODO
 
 - [ ] make the done tasks -> text-decoration: line-through;
