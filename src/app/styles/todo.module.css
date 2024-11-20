@@ -95,6 +95,7 @@ code {
   list-style: none;
   color: #526e48;
   font-size: 19px;
+  cursor: pointer;
 }
 
 .form {
