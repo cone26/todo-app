@@ -12,8 +12,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # - name: Build
-      #   run: npm run build
       - name: Deploy to Netlify
         run: curl -X POST -d {} https://api.netlify.com/build_hooks/673e0c5941fa5804078a9d78
         # uses: nwtgck/actions-netlify@v2.0
