@@ -2,6 +2,8 @@
 name: Build and Deploy to Netlify
 on:
   push:
+  branches:
+    - main
 jobs:
   build:
     runs-on: ubuntu-22.04
@@ -17,7 +19,6 @@ jobs:
         uses: nwtgck/actions-netlify@v2.0
         with:
           publish-dir: "./dist"
-          production-branch: develop
           deploy-message: "Deploy from GitHub Actions"
           enable-pull-request-comment: false
           enable-commit-comment: true
