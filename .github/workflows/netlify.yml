@@ -4,29 +4,16 @@ on:
     branches:
       - main
 jobs:
-  # build:
-  #   runs-on: ubuntu-22.04
-  #   steps:
-  #     - uses: actions/checkout@v3
-
-  #     - name: Install dependencies
-  #       run: npm install
-
   deploy:
-    name: "Deploy to Netlify"
+    name: "Deploy"
+    runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v1
       - uses: veloii/action-netlify-deploy@v2.2.1
         with:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        # uses: nwtgck/actions-netlify@v2.0
-        # with:
-        #   publish-dir: "./dist"
-        #   deploy-message: "Deploy from GitHub Actions"
-        #   enable-pull-request-comment: false
-        #   enable-commit-comment: true
-        #   overwrites-pull-request-comment: true
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
