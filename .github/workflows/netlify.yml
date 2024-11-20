@@ -12,8 +12,14 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Deploy to Netlify
-        run: curl -X POST -d {} https://api.netlify.com/build_hooks/673e0c5941fa5804078a9d78
+     jobs:
+  deploy:
+  name: "Deploy to Netlify"
+    steps:
+      - uses: veloii/action-netlify-deploy@v2.2.1
+        with:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.MY_TOKEN_SECRET }}
+          NETLIFY_DEPLOY_TO_PROD: true
         # uses: nwtgck/actions-netlify@v2.0
         # with:
         #   publish-dir: "./dist"
