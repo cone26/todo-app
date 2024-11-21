@@ -16,6 +16,8 @@ A simple todo application built with React, deployed on Netlify, and automated w
 - [x] organize components
 - [x] next js migration
 - [x] ci cd script...
+- [ ] update todo
+- [ ] login
 
 ## 🧰 Tech Stack
 
@@ -26,7 +28,7 @@ A simple todo application built with React, deployed on Netlify, and automated w
 ## ✏️ Features
 
 - Create, update, and delete tasks.
-- Responsive design for mobile and desktop users.
+<!-- - Responsive design for mobile and desktop users. -->
 - Automatically deployed to production through CI/CD.
 
 ## ➡️Getting Started
