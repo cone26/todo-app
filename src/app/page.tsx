@@ -29,6 +29,13 @@ export default function Page() {
     const newTodo: Todo = { id: Date.now().toString(), text };
     setTodos((todos) => [newTodo, ...todos]);
     setTotal((total) => ++total);
+    const currentTotal = total + 1;
+    const updatedPercent = Math.floor((done / currentTotal) * 100);
+
+    setPercent((percent) => {
+      percent = updatedPercent;
+      return percent;
+    });
   };
 
   const handleDeleteTodo = (id: string) => {
