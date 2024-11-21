@@ -18,6 +18,7 @@ A simple todo application built with React, deployed on Netlify, and automated w
 - [x] ci cd script...
 - [ ] update todo
 - [ ] login
+- [ ] fix done percentage
 
 ## 🧰 Tech Stack
 
