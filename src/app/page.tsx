@@ -15,6 +15,8 @@ export default function Page() {
   const [percent, setPercent] = React.useState<number>(0);
   const [total, setTotal] = React.useState<number>(0);
   const [done, setDone] = React.useState<number>(0);
+  const [editingId, setEditingId] = useState<string | null>(null);
+  const [editText, setEditText] = useState<string>("");
 
   useEffect(() => {
     const storedTodos = loadTodos();
@@ -38,6 +40,11 @@ export default function Page() {
     });
   };
 
+  const handleUpdateTodo = (id: string, newText: string) => {
+    setTodos((prev) =>
+      prev.map((todo) => (todo.id === id ? { ...todo, text: newText } : todo))
+    );
+  };
   const handleDeleteTodo = (id: string) => {
     const updatedTodo = todos.filter((todo) => todo.id !== id);
     setTodos([...updatedTodo]);
@@ -69,7 +76,11 @@ export default function Page() {
         {" "}
         Click to check done!
       </span>
-      <TodoList todos={todos} onDeleteTodo={handleDeleteTodo} />
+      <TodoList
+        todos={todos}
+        onUpdateTodo={handleUpdateTodo}
+        onDeleteTodo={handleDeleteTodo}
+      />
     </div>
   );
 }
