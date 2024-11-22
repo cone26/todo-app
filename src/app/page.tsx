@@ -15,8 +15,6 @@ export default function Page() {
   const [percent, setPercent] = React.useState<number>(0);
   const [total, setTotal] = React.useState<number>(0);
   const [done, setDone] = React.useState<number>(0);
-  const [editingId, setEditingId] = useState<string | null>(null);
-  const [editText, setEditText] = useState<string>("");
 
   useEffect(() => {
     const storedTodos = loadTodos();
