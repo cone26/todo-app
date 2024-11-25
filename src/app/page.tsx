@@ -1,10 +1,11 @@
 "use client";
-import TodoList from "@/components/TodoList";
-import TodoForm from "@/components/TodoForm";
 import React, { useState, useEffect } from "react";
 import { loadTodos, saveTodos } from "utils/storage";
-import styles from "../app/styles/todo.module.css";
-import "./globals.css";
+import TodoList from "@/components/TodoList";
+import TodoForm from "@/components/TodoForm";
+import "./styles/globals.css";
+import styles from "./styles/Todo.module.css";
+
 interface Todo {
   id: string;
   text: string;
