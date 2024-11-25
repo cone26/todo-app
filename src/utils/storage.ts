@@ -1,6 +1,9 @@
+import { Status } from "../constants/statusEnum";
+
 interface Todo {
   id: string;
   text: string;
+  status: Status;
 }
 
 export const loadTodos = (): Todo[] => {

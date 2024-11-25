@@ -5,10 +5,12 @@ import TodoList from "@/components/TodoList";
 import TodoForm from "@/components/TodoForm";
 import "./styles/globals.css";
 import styles from "./styles/Todo.module.css";
+import { Status } from "../constants/statusEnum";
 
 interface Todo {
   id: string;
   text: string;
+  status: Status;
 }
 
 export default function Page() {
@@ -27,7 +29,12 @@ export default function Page() {
   }, [todos]);
 
   const handleAddTodo = (text: string) => {
-    const newTodo: Todo = { id: Date.now().toString(), text };
+    const newTodo: Todo = {
+      id: Date.now().toString(),
+      text,
+      status: Status.ACTIVE,
+    };
+
     setTodos((todos) => [newTodo, ...todos]);
     setTotal((total) => ++total);
     const currentTotal = total + 1;
@@ -44,8 +51,16 @@ export default function Page() {
       prev.map((todo) => (todo.id === id ? { ...todo, text: newText } : todo))
     );
   };
+
   const handleDeleteTodo = (id: string) => {
-    const updatedTodo = todos.filter((todo) => todo.id !== id);
+    const updatedTodo = todos.map((todo) => {
+      if (todo.id === id) {
+        todo.status = Status.COMPLETED;
+      }
+
+      return todo;
+    });
+
     setTodos([...updatedTodo]);
     setDone((done) => ++done);
     const currentDone = done + 1;
