@@ -12,14 +12,15 @@ A simple todo application built with React, deployed on Netlify, and automated w
 
 ## ☑️ TODO
 
-- [ ] make the done tasks -> text-decoration: line-through;
+- [x] make the done tasks -> text-decoration: line-through;
 - [x] save the tasks
 - [x] directory structure
 - [x] organize components
 - [x] next js migration
 - [x] ci cd script...
-- [ ] update todo
+- [x] update todo
 - [ ] login
+- [ ] connect to the backend APIs
 - [x] fix done percentage
 
 ## 🧰 Tech Stack
