@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import styles from "../app/styles/TodoList.module.css";
-import { Status } from "../constants/statusEnum";
 
 interface Todo {
   id: string;
   text: string;
-  status: Status;
+  status: boolean;
 }
 
 interface Props {
@@ -49,7 +48,7 @@ const TodoList: React.FC<Props> = ({ todos, onUpdateTodo, onDeleteTodo }) => {
               <button onClick={() => handleSave(todo.id)}>Save</button>
               <button onClick={handleCancel}>Cancel</button>
             </div>
-          ) : todo.status === Status.COMPLETED ? (
+          ) : todo.status === false ? (
             <div>
               <input
                 type="checkbox"

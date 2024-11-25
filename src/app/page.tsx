@@ -5,12 +5,11 @@ import TodoList from "@/components/TodoList";
 import TodoForm from "@/components/TodoForm";
 import "./styles/globals.css";
 import styles from "./styles/Todo.module.css";
-import { Status } from "../constants/statusEnum";
 
 interface Todo {
   id: string;
   text: string;
-  status: Status;
+  status: boolean;
 }
 
 export default function Page() {
@@ -32,7 +31,7 @@ export default function Page() {
     const newTodo: Todo = {
       id: Date.now().toString(),
       text,
-      status: Status.ACTIVE,
+      status: true,
     };
 
     setTodos((todos) => [newTodo, ...todos]);
@@ -55,7 +54,7 @@ export default function Page() {
   const handleDeleteTodo = (id: string) => {
     const updatedTodo = todos.map((todo) => {
       if (todo.id === id) {
-        todo.status = Status.COMPLETED;
+        todo.status = !todo.status;
       }
 
       return todo;
