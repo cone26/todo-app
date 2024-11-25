@@ -53,7 +53,7 @@ A simple todo application built with React, deployed on Netlify, and automated w
 3. **Run the App Locally**
 
    ```bash
-   npm start
+   npm run start
    ```
 
 4. **Deploy**  
