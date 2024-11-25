@@ -8,6 +8,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 * {
@@ -29,4 +30,15 @@ button {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+}
+
+input[type="text"] {
+  background-color: #05060f0a;
+  border-radius: 0.5rem;
+  padding: 0 14px;
+  margin: 0 14px;
+  outline: none;
+  transition: color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1) 0s,
+    background 0.2s cubic-bezier(0.25, 0.01, 0.25, 1) 0s,
+    border-color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1) 0s;
 }
