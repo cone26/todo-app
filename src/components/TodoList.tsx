@@ -39,7 +39,7 @@ const TodoList: React.FC<Props> = ({ todos, onUpdateTodo, onDeleteTodo }) => {
       {todos.map((todo) => (
         <li className={styles.todo} key={todo.id}>
           {editingId === todo.id ? (
-            <div>
+            <div className={styles.todoContent}>
               <input
                 type="text"
                 value={editText}
@@ -49,7 +49,7 @@ const TodoList: React.FC<Props> = ({ todos, onUpdateTodo, onDeleteTodo }) => {
               <button onClick={handleCancel}>Cancel</button>
             </div>
           ) : todo.status === false ? (
-            <div>
+            <div className={styles.todoContent}>
               <input
                 type="checkbox"
                 className={styles.checkBox}
@@ -60,14 +60,19 @@ const TodoList: React.FC<Props> = ({ todos, onUpdateTodo, onDeleteTodo }) => {
               </span>
             </div>
           ) : (
-            <div>
+            <div className={styles.todoContent}>
               <input
                 type="checkbox"
                 className={styles.checkBox}
                 onClick={() => onDeleteTodo(todo.id)}
               ></input>
               <span>{todo.text}</span>
-              <button onClick={() => handleEdit(todo)}>Edit</button>
+              <button
+                className={styles.editBtn}
+                onClick={() => handleEdit(todo)}
+              >
+                Edit
+              </button>
             </div>
           )}
         </li>

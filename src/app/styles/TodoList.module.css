@@ -1,5 +1,5 @@
 .todos {
-  padding: 0 2em;
+  padding: 0;
   margin: 14px;
   display: flex;
   flex-direction: column;
@@ -9,13 +9,25 @@
 
 .todo {
   padding: 0.5em;
-  width: 80%;
+  width: 100%;
   list-style: none;
   color: #526e48;
   font-size: 19px;
   cursor: pointer;
 }
 
+.todoContent {
+  display: flex;
+  justify-content: space-between;
+}
+
 .checkBox {
   margin-right: 30px;
+}
+
+.editBtn {
+  width: 80px;
+  height: 30px;
+  padding: 0 1rem;
+  font-size: 14px;
 }
