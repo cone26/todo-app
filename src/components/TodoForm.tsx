@@ -7,7 +7,6 @@ interface Props {
 
 const TodoForm: React.FC<Props> = ({ onAddTodo }) => {
   const [todo, setTodo] = useState<string>("");
-  //   const [total, setTotal] = useState<number>(0);
 
   const onChange = (event: React.ChangeEvent) => {
     const element = event.currentTarget as HTMLInputElement;
@@ -21,7 +20,6 @@ const TodoForm: React.FC<Props> = ({ onAddTodo }) => {
 
     onAddTodo(todo);
     setTodo("");
-    // setTotal((total) => ++total);
   };
 
   return (

@@ -58,6 +58,7 @@ export default function Page() {
         if (todo.status === false) {
           setDone((done) => --done);
           currentDone--;
+          todo.status = !todo.status;
           return todo;
         }
         todo.status = !todo.status;
