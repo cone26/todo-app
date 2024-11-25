@@ -4,7 +4,7 @@ A simple todo application built with React, deployed on Netlify, and automated w
 
 [Check it here !](https://wutsinmytodolist.netlify.app/)
 
-<img width="826" alt="Screenshot 2024-11-21 at 10 07 12 AM" src="https://github.com/user-attachments/assets/4d2bb433-434d-4b2a-8990-e8838bb74c06">
+<img width="585" alt="Screenshot 2024-11-25 at 9 41 13 PM" src="https://github.com/user-attachments/assets/836cfb97-a11a-4b77-9336-1b6dc2376e6a">
 
 ## Deploy Status
 
