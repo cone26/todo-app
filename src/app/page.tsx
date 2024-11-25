@@ -52,19 +52,25 @@ export default function Page() {
   };
 
   const handleDeleteTodo = (id: string) => {
+    let currentDone = done;
     const updatedTodo = todos.map((todo) => {
       if (todo.id === id) {
+        if (todo.status === false) {
+          setDone((done) => --done);
+          currentDone--;
+          return todo;
+        }
         todo.status = !todo.status;
+        setDone((done) => ++done);
+        currentDone++;
       }
 
       return todo;
     });
 
     setTodos([...updatedTodo]);
-    setDone((done) => ++done);
-    const currentDone = done + 1;
-    const updatedPercent = Math.floor((currentDone / total) * 100);
 
+    const updatedPercent = Math.floor((currentDone / total) * 100);
     setPercent((percent) => {
       percent = updatedPercent;
       return percent;
