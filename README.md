@@ -32,6 +32,7 @@ A simple todo application built with React, deployed on Netlify, and automated w
 
 - Create, update, and delete tasks.
 <!-- - Responsive design for mobile and desktop users. -->
+- Save todos using Local Storage.
 - Automatically deployed to production through CI/CD.
 
 ## ➡️Getting Started
