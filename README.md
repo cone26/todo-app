@@ -4,7 +4,7 @@ A simple todo application built with React, deployed on Netlify, and automated w
 
 [Check it here !](https://wutsinmytodolist.netlify.app/)
 
-[Backend Repo](https://github.com/cone26/todo-backend)
+[✔️Backend Repo:APIs](https://github.com/cone26/todo-backend)
 
 <img width="585" alt="Screenshot 2024-11-25 at 9 41 13 PM" src="https://github.com/user-attachments/assets/836cfb97-a11a-4b77-9336-1b6dc2376e6a">
 
