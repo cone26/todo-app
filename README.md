@@ -57,6 +57,3 @@ A simple todo application built with React, deployed on Netlify, and automated w
    ```bash
    npm run start
    ```
-
-4. **Deploy**  
-   The app is automatically deployed to Netlify through GitHub Actions when changes are pushed to the `main` branch.
