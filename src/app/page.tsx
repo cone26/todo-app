@@ -89,8 +89,8 @@ export default function Page() {
       </span>
       <TodoList
         todos={todos}
-        onUpdateTodo={handleUpdateTodo}
-        onDeleteTodo={handleDeleteTodo}
+        updateTodo={handleUpdateTodo}
+        deleteTodo={handleDeleteTodo}
       />
     </div>
   );

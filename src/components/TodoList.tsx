@@ -2,20 +2,20 @@ import React from "react";
 import TodoItem from "./TodoItem";
 
 interface Todo {
-  id: number;
+  id: string;
   text: string;
-  done: boolean;
+  status: boolean;
 }
 
 interface TodoListProps {
   todos: Todo[];
-  toggleTodo: (id: number) => void;
-  deleteTodo: (id: number) => void;
+  updateTodo: (id: string, newText: string) => void;
+  deleteTodo: (id: string) => void;
 }
 
 const TodoList: React.FC<TodoListProps> = ({
   todos,
-  toggleTodo,
+  updateTodo,
   deleteTodo,
 }) => {
   return (
@@ -24,7 +24,7 @@ const TodoList: React.FC<TodoListProps> = ({
         <TodoItem
           key={todo.id}
           todo={todo}
-          toggleTodo={toggleTodo}
+          updateTodo={updateTodo}
           deleteTodo={deleteTodo}
         />
       ))}

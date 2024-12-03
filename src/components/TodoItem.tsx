@@ -1,29 +1,28 @@
-// src/components/TodoItem.tsx
 import React from "react";
 
 interface Todo {
-  id: number;
+  id: string;
   text: string;
-  done: boolean;
+  status: boolean;
 }
 
 interface TodoItemProps {
   todo: Todo;
-  toggleTodo: (id: number) => void;
-  deleteTodo: (id: number) => void;
+  updateTodo: (id: string, newText: string) => void;
+  deleteTodo: (id: string) => void;
 }
 
 const TodoItem: React.FC<TodoItemProps> = ({
   todo,
-  toggleTodo,
+  updateTodo,
   deleteTodo,
 }) => {
   return (
     <div className="flex items-center justify-between p-2 border-b">
       <span
-        onClick={() => toggleTodo(todo.id)}
+        onClick={() => updateTodo(todo.id, todo.text)}
         className={`cursor-pointer ${
-          todo.done ? "line-through text-gray-500" : ""
+          todo.status ? "line-through text-gray-500" : ""
         }`}
       >
         {todo.text}
