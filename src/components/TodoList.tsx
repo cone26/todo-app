@@ -1,5 +1,5 @@
-import React from "react";
-import TodoItem from "./TodoItem";
+import React, { useState } from "react";
+import styles from "../app/styles/TodoList.module.css";
 
 interface Todo {
   id: string;
@@ -7,28 +7,81 @@ interface Todo {
   status: boolean;
 }
 
-interface TodoListProps {
+interface Props {
   todos: Todo[];
   updateTodo: (id: string, newText: string) => void;
   deleteTodo: (id: string) => void;
 }
 
-const TodoList: React.FC<TodoListProps> = ({
-  todos,
-  updateTodo,
-  deleteTodo,
-}) => {
+const TodoList: React.FC<Props> = ({ todos, updateTodo, deleteTodo }) => {
+  const [editingId, setEditingId] = useState<string | null>(null);
+  const [editText, setEditText] = useState<string>("");
+
+  const handleEdit = (todo: Todo) => {
+    setEditingId(todo.id);
+    setEditText(todo.text);
+  };
+
+  const handleSave = (id: string) => {
+    if (!editText.trim()) return;
+    updateTodo(id, editText);
+    setEditingId(null);
+    setEditText("");
+  };
+
   return (
-    <div>
+    <ul className={styles.todos}>
       {todos.map((todo) => (
-        <TodoItem
-          key={todo.id}
-          todo={todo}
-          updateTodo={updateTodo}
-          deleteTodo={deleteTodo}
-        />
+        <li className={styles.todo} key={todo.id}>
+          {editingId === todo.id ? (
+            <div className={styles.todoContent}>
+              <input
+                type="text"
+                value={editText}
+                className={styles.updateInput}
+                onChange={(e) => setEditText(e.target.value)}
+              ></input>
+              <button
+                className={styles.smallBtn}
+                onClick={() => handleSave(todo.id)}
+              >
+                Save
+              </button>
+            </div>
+          ) : todo.status === false ? (
+            <div className={styles.todoContent}>
+              <div className={styles.innerContent}>
+                <input
+                  type="checkbox"
+                  className={styles.checkBox}
+                  onClick={() => deleteTodo(todo.id)}
+                ></input>
+                <span style={{ textDecoration: "line-through" }}>
+                  {todo.text}
+                </span>
+              </div>
+            </div>
+          ) : (
+            <div className={styles.todoContent}>
+              <div className={styles.innerContent}>
+                <input
+                  type="checkbox"
+                  className={styles.checkBox}
+                  onClick={() => deleteTodo(todo.id)}
+                ></input>
+                <span>{todo.text}</span>
+              </div>
+              <button
+                className={styles.smallBtn}
+                onClick={() => handleEdit(todo)}
+              >
+                Edit
+              </button>
+            </div>
+          )}
+        </li>
       ))}
-    </div>
+    </ul>
   );
 };
 
