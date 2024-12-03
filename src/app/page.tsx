@@ -1,6 +1,6 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import { loadTodos, saveTodos } from "utils/storage";
+import React, { useState } from "react";
+import useLocalStorage from "hooks/useLocalStorage";
 import TodoList from "@/components/TodoList";
 import TodoForm from "@/components/TodoForm";
 import "./styles/globals.css";
@@ -13,19 +13,10 @@ interface Todo {
 }
 
 export default function Page() {
-  const [todos, setTodos] = useState<Todo[]>([]);
-  const [percent, setPercent] = React.useState<number>(0);
-  const [total, setTotal] = React.useState<number>(0);
-  const [done, setDone] = React.useState<number>(0);
-
-  useEffect(() => {
-    const storedTodos = loadTodos();
-    setTodos(storedTodos);
-  }, []);
-
-  useEffect(() => {
-    saveTodos(todos);
-  }, [todos]);
+  const [todos, setTodos] = useLocalStorage<Todo[]>("todos", []);
+  const [percent, setPercent] = useState<number>(0);
+  const [total, setTotal] = useState<number>(0);
+  const [done, setDone] = useState<number>(0);
 
   const handleAddTodo = (text: string) => {
     const newTodo: Todo = {
@@ -34,7 +25,7 @@ export default function Page() {
       status: true,
     };
 
-    setTodos((todos) => [newTodo, ...todos]);
+    setTodos([newTodo, ...todos]);
     setTotal((total) => ++total);
     const currentTotal = total + 1;
     const updatedPercent = Math.floor((done / currentTotal) * 100);
@@ -46,8 +37,8 @@ export default function Page() {
   };
 
   const handleUpdateTodo = (id: string, newText: string) => {
-    setTodos((prev) =>
-      prev.map((todo) => (todo.id === id ? { ...todo, text: newText } : todo))
+    setTodos(
+      todos.map((todo) => (todo.id === id ? { ...todo, text: newText } : todo))
     );
   };
 
